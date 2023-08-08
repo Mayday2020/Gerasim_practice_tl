@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FilterValuesType} from './App';
+/*import {FilterValuesType} from './App';*/
 
 type TaskType = {
     id: number
@@ -15,7 +15,7 @@ type PropsType = {
 }
 
 export function Todolist(props: PropsType) {
-    let [filter, setFilter] = useState<FilterValuesType>("all");
+    let [filter, setFilter] = useState<any>("all"); // this type any
 
     let tasksForTodolist = props.tasks;
 
@@ -29,7 +29,7 @@ export function Todolist(props: PropsType) {
         tasksForTodolist = props.tasks.slice( 0, 3)
     }
 
-    function changeFilter(value: FilterValuesType) {
+    function changeFilter(value: any)  {// this type any
         setFilter(value);
     }
     return <div>
